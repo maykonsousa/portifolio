@@ -51,7 +51,6 @@ export default createGlobalStyle`
         color: inherit;
 
         &:hover {
-            text-decoration: underline;
             color: ${({ theme }) => theme.colors["link-hover"]};
         }
     }
