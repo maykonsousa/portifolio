@@ -3,12 +3,18 @@ import { setCookie, parseCookies } from "nookies";
 import { createContext, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { light, dark } from "../styles/themes";
+import { useRouter } from "next/router";
 
 interface GeneralContextType {
   themeName: "light" | "dark";
   toggleTheme: (name?: "dark" | "light") => void;
   toggleMobileNav: () => void;
+  onPrevRedirect: () => void;
+  onNextRedirect: () => void;
   showMobileNav: boolean;
+  pathName: string;
+  prevPath: string | null;
+  nextPath: string | null;
 }
 
 interface GeneralProviderProps {
@@ -16,7 +22,43 @@ interface GeneralProviderProps {
   cookieTheme?: "light" | "dark";
 }
 
+interface RedirectMapProps {
+  prev: string | null;
+  next: string | null;
+}
+
+interface RedirectMap {
+  [key: string]: RedirectMapProps;
+}
+
 type ThemeType = typeof light | typeof dark;
+
+export const PathRedirectMap: RedirectMap = {
+  "/": {
+    prev: null,
+    next: "/about",
+  },
+  "/about": {
+    prev: "/",
+    next: "/experiences",
+  },
+  "/experiences": {
+    prev: "/about",
+    next: "/projects",
+  },
+  "/projects": {
+    prev: "/experiences",
+    next: "/education",
+  },
+  "/education": {
+    prev: "/projects",
+    next: "/contact",
+  },
+  "/contact": {
+    prev: "/education",
+    next: null,
+  },
+};
 
 //create context
 export const GeneralContext = createContext<GeneralContextType>({
@@ -31,6 +73,13 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
   );
   const [theme, setTheme] = useState<ThemeType>(dark);
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
+
+  const router = useRouter();
+
+  const pathName = router.asPath;
+
+  const prevPath = PathRedirectMap[router.asPath].prev;
+  const nextPath = PathRedirectMap[router.asPath].next;
 
   const toggleTheme = (name?: "dark" | "light") => {
     if (name) {
@@ -50,6 +99,18 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
     setShowMobileNav(!showMobileNav);
   };
 
+  const onPrevRedirect = () => {
+    if (prevPath) {
+      router.push(prevPath);
+    }
+  };
+
+  const onNextRedirect = () => {
+    if (nextPath) {
+      router.push(nextPath);
+    }
+  };
+
   useEffect(() => {
     setCookie(null, "theme", themeName, {
       maxAge: 30 * 24 * 60 * 60,
@@ -59,7 +120,17 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
 
   return (
     <GeneralContext.Provider
-      value={{ themeName, toggleTheme, toggleMobileNav, showMobileNav }}
+      value={{
+        themeName,
+        toggleTheme,
+        toggleMobileNav,
+        onPrevRedirect,
+        onNextRedirect,
+        showMobileNav,
+        prevPath,
+        nextPath,
+        pathName,
+      }}
     >
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </GeneralContext.Provider>
@@ -68,9 +139,7 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { theme } = parseCookies();
-  console.log(ctx);
 
-  console.log("theme server", ctx);
   return {
     props: {
       cookieTheme: theme || "dark",

@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import { EmailBar } from "../EmailBar/EmailBar";
 import { MobileNav } from "../MobileNav/MobileNav";
+import { NextRedirect } from "../NextRedirect/NextRedirect";
+import { PrevRedirect } from "../PrevRedirect/PrevRedirect";
 import { Socialbar } from "../SocialBar/Socialbar";
 import { ChildrenContainer, MainContainer } from "./Main.styles";
 
@@ -16,7 +18,11 @@ export const Main = ({ children }: MainProps) => {
     <MainContainer>
       <Socialbar />
       {showMobileNav ? <MobileNav /> : null}
-      <ChildrenContainer>{children}</ChildrenContainer>
+      <ChildrenContainer>
+        <PrevRedirect />
+        {children}
+        <NextRedirect />
+      </ChildrenContainer>
       <EmailBar />
     </MainContainer>
   );

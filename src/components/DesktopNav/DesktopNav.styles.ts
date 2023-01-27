@@ -13,6 +13,13 @@ export const DesktopNavContainer = styled.ul`
   }
 
   li {
+    border-bottom: solid transparent 3px;
+    padding-bottom: 0.5rem;
+
+    &.active {
+      border-color: ${({ theme }) => theme.colors["purple-500"]};
+    }
+
     a {
       &:hover {
         text-decoration: none;

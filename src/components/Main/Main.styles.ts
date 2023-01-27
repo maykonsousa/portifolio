@@ -14,6 +14,6 @@ export const ChildrenContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
   height: 100%;
 `;
