@@ -55,12 +55,17 @@ export const MobileNavContainer = styled.div<MobileNavProps>`
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1rem;
+    gap: 0.5rem;
     li {
       width: 100%;
       align-items: center;
       justify-content: center;
       width: 100%;
+      padding: 0.2rem 0;
+      border-bottom: solid 3px transparent;
+      &.active {
+        border-bottom: solid 3px ${({ theme }) => theme.colors["purple-500"]};
+      }
       cursor: pointer;
       > div {
         display: flex;

@@ -31,11 +31,6 @@ export default class MyDocument extends Document {
       <>
         <Html lang="en">
           <Head>
-            <meta charSet="utf-8" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1"
-            />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
               rel="preconnect"
@@ -45,26 +40,6 @@ export default class MyDocument extends Document {
             <link
               href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
               rel="stylesheet"
-            />
-            <meta
-              property="og:title"
-              content="Maykon Sousa - Front-End Developer"
-              key="title"
-            />
-            <meta
-              property="og:image"
-              content="https://uploaddeimagens.com.br/images/004/315/262/original/print.png?1674793099"
-            />
-            <meta property="og:image:type" content="image/png" />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
-            <meta
-              property="og:image:alt"
-              content="Maykon Sousa - Front-End Developer"
-            />
-            <meta
-              property="og:description"
-              content="Desenvolvedor front-end apaixonado por tecnologia, Coca-cola e doguinhos caramelos."
             />
           </Head>
           <body>
