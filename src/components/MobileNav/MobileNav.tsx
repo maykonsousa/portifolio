@@ -1,16 +1,20 @@
 import { GeneralContext } from "@/context/GeneralContext";
-import { light } from "@/styles/themes";
 import Link from "next/link";
 import React, { useContext } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
+import { IoClose } from "react-icons/io5";
 import { MobileNavContainer, ThemeIconContainer } from "./MobileNav.styles";
 
 export const MobileNav = () => {
-  const { themeName, toggleTheme, showMobileNav, pathName } =
+  const { themeName, toggleTheme, showMobileNav, pathName, toggleMobileNav } =
     useContext(GeneralContext);
   return (
     <MobileNavContainer open={showMobileNav}>
+      <div>
+        <button onClick={toggleMobileNav}>
+          <IoClose size={24} />
+        </button>
+      </div>
       <ul>
         <li className={pathName === "/" ? "active" : ""}>
           <Link href={"/"}>Home</Link>

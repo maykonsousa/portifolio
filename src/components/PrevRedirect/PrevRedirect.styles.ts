@@ -16,11 +16,14 @@ export const PrevContainer = styled.button`
 
   &:hover {
     background-color: rgba(82, 82, 91, 0.1);
+    svg {
+      opacity: 1;
+    }
   }
 
   svg {
     width: 2rem;
     height: 2rem;
-    transform: rotate(90deg);
+    opacity: 0.5;
   }
 `;

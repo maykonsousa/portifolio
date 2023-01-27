@@ -23,20 +23,34 @@ export const MobileNavContainer = styled.div<MobileNavProps>`
   }
 
   border-radius: 4px;
-
   z-index: 100;
   position: absolute;
   top: 0.5rem;
   left: 1rem;
-  padding: 1rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  background-color: ${({ theme }) => theme.colors["zinc-700"]};
+  background: ${({ theme }) => theme.colors["zinc-700"]};
   transition: all 0.2s ease-in-out;
-  //animate slide in from left
   animation: slideIn 0.5s ease-in-out;
   animation-fill-mode: forwards;
+  > div {
+    margin-top: 1rem;
+    width: 100%;
+    color: ${({ theme }) => theme.colors["zinc-100"]};
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    button {
+      background-color: transparent;
+      border: none;
+      color: ${({ theme }) => theme.colors["zinc-100"]};
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+
   @keyframes slideIn {
     0% {
       transform: translateX(-100%);

@@ -17,12 +17,15 @@ export const NextContainer = styled.button`
   &:hover {
     background-color: rgba(82, 82, 91, 0.1);
     color: ${({ theme }) => theme.colors["purple-600"]};
+    svg {
+      opacity: 1;
+    }
   }
 
   svg {
     width: 2rem;
     height: 2rem;
-    transform: rotate(-90deg);
     fill: ${({ theme }) => theme.colors["purple-500"]};
+    opacity: 0.5;
   }
 `;
