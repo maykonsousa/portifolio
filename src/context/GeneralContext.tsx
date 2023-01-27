@@ -35,7 +35,7 @@ type ThemeType = typeof light | typeof dark;
 
 export const PathRedirectMap: RedirectMap = {
   "/": {
-    prev: "/404",
+    prev: null,
     next: "/about",
   },
   "/about": {
@@ -56,7 +56,7 @@ export const PathRedirectMap: RedirectMap = {
   },
   "/contact": {
     prev: "/education",
-    next: "404",
+    next: null,
   },
 };
 
