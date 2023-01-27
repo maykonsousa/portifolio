@@ -16,4 +16,7 @@ export const ChildrenContainer = styled.div`
   padding: 2rem;
   padding-top: 3rem;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;

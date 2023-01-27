@@ -31,4 +31,19 @@ export const UnderContructionContainer = styled.div`
   p {
     font-size: 2rem;
   }
+
+  //mobile
+  @media (max-width: 849px) {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
 `;
