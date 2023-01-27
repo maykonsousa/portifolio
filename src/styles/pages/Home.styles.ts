@@ -4,6 +4,14 @@ export const HomePageContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 `;
 
 export const ImgContainer = styled.div`
@@ -14,6 +22,16 @@ export const ImgContainer = styled.div`
   justify-content: center;
   font-weight: bold;
   animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  //mobile
+  @media (max-width: 768px) {
+    height: 20rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   img {
     object-fit: cover;
@@ -50,6 +68,8 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   padding-left: 2rem;
   animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  //mobile
 
   h2 {
     font-size: 2.5rem;
@@ -96,6 +116,18 @@ export const ContentContainer = styled.div`
 
     100% {
       transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 20rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
     }
   }
 `;
