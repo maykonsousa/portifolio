@@ -121,6 +121,8 @@ export const ContentContainer = styled.div`
 
   @media (max-width: 768px) {
     height: 20rem;
+    padding: 0;
+    align-items: center;
 
     h1 {
       font-size: 2.5rem;
