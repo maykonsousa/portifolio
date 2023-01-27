@@ -51,11 +51,11 @@ export default class MyDocument extends Document {
               content="Maykon Sousa - Front-End Developer"
               key="title"
             />
-            {/* <meta
-            property="og:image"
-            content="https://uploaddeimagens.com.br/images/004/300/801/original/Screenshot_from_2023-01-16_14-34-49.png?1673890503"
-          /> */}
-            <meta property="og:image:type" content="image/jpg" />
+            <meta
+              property="og:image"
+              content="https://uploaddeimagens.com.br/images/004/315/262/original/print.png?1674793099"
+            />
+            <meta property="og:image:type" content="image/png" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
             <meta
