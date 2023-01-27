@@ -73,13 +73,12 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
   );
   const [theme, setTheme] = useState<ThemeType>(dark);
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
+  const [pathName, setPathName] = useState<string>("/");
 
   const router = useRouter();
 
-  const pathName = router.asPath;
-
-  const prevPath = PathRedirectMap[router.asPath].prev;
-  const nextPath = PathRedirectMap[router.asPath].next;
+  const prevPath = PathRedirectMap[pathName].prev;
+  const nextPath = PathRedirectMap[pathName].next;
 
   const toggleTheme = (name?: "dark" | "light") => {
     if (name) {
@@ -116,7 +115,9 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
       maxAge: 30 * 24 * 60 * 60,
     });
     setTheme(themeName === "light" ? light : dark);
-  }, [themeName]);
+
+    setPathName(router.asPath);
+  }, [themeName, router]);
 
   return (
     <GeneralContext.Provider
