@@ -10,19 +10,19 @@ export const DesktopNav = () => {
         <Link href={"/"}>Home</Link>
       </li>
       <li>
-        <Link href={"/"}>Sobre</Link>
+        <Link href={"/about"}>Sobre</Link>
       </li>
       <li>
-        <Link href={"/"}>Experiências</Link>
+        <Link href={"/experiences"}>Experiências</Link>
       </li>
       <li>
-        <Link href={"/"}>Projetos</Link>
+        <Link href={"/projects"}>Projetos</Link>
       </li>
       <li>
-        <Link href={"/"}>Educação</Link>
+        <Link href={"/education"}>Educação</Link>
       </li>
       <li>
-        <Link href={"/"}>Contatos</Link>
+        <Link href={"/contact"}>Contatos</Link>
       </li>
       <li>
         <ThemeToggle />
