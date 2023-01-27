@@ -22,10 +22,12 @@ export const Header = () => {
       <HeaderContent>
         <MobileToggleButton />
         <HeaderLogo>
-          <Image
-            src={themeName === "dark" ? LogoImg : LogoLightImg}
-            alt="Logo com as inciciais M e S"
-          />
+          <Link href="/">
+            <Image
+              src={themeName === "dark" ? LogoImg : LogoLightImg}
+              alt="Logo com as inciciais M e S"
+            />
+          </Link>
         </HeaderLogo>
 
         <DesktopNav />

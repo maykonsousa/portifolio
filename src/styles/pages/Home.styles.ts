@@ -4,6 +4,7 @@ export const HomePageContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  overflow: hidden;
 
   @media (max-width: 849px) {
     display: flex;
