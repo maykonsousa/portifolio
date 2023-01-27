@@ -64,7 +64,7 @@ export default class MyDocument extends Document {
             />
             <meta
               property="og:description"
-              content="Plataforma independente criada exclusivamente para reunir os aluos do NLW SETUP. Cadastre-se e tenha acesso á rankind de indicações e redes sociais de outros usuários"
+              content="Desenvolvedor front-end apaixonado por tecnologia, Coca-cola e doguinhos caramelos."
             />
           </Head>
           <body>
