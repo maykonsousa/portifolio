@@ -7,6 +7,8 @@ import { light, dark } from "../styles/themes";
 interface GeneralContextType {
   themeName: "light" | "dark";
   toggleTheme: () => void;
+  toggleMobileNav: () => void;
+  showMobileNav: boolean;
 }
 
 interface GeneralProviderProps {
@@ -28,12 +30,17 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
     cookieTheme || "dark"
   );
   const [theme, setTheme] = useState<ThemeType>(dark);
+  const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
 
   const toggleTheme = () => {
     setThemeName(themeName === "light" ? "dark" : "light");
     setCookie(null, "theme", themeName === "light" ? "dark" : "light", {
       maxAge: 30 * 24 * 60 * 60,
     });
+  };
+
+  const toggleMobileNav = () => {
+    setShowMobileNav(!showMobileNav);
   };
 
   useEffect(() => {
@@ -44,7 +51,9 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
   }, [themeName]);
 
   return (
-    <GeneralContext.Provider value={{ themeName, toggleTheme }}>
+    <GeneralContext.Provider
+      value={{ themeName, toggleTheme, toggleMobileNav, showMobileNav }}
+    >
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </GeneralContext.Provider>
   );
