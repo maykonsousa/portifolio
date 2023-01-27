@@ -1,7 +1,7 @@
 import { Header, Main, UnderConstruction } from "@/components";
 import React from "react";
 
-const About = () => {
+const Experiences = () => {
   return (
     <>
       <Header />
@@ -12,4 +12,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Experiences;

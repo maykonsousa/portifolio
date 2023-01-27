@@ -1,15 +1,15 @@
 import { Header, Main, UnderConstruction } from "@/components";
 import React from "react";
 
-const About = () => {
+const NotFound = () => {
   return (
     <>
       <Header />
       <Main>
-        <UnderConstruction />
+        <h1>Página não encontrada</h1>
       </Main>
     </>
   );
 };
 
-export default About;
+export default NotFound;
