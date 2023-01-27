@@ -6,7 +6,7 @@ import { light, dark } from "../styles/themes";
 
 interface GeneralContextType {
   themeName: "light" | "dark";
-  toggleTheme: () => void;
+  toggleTheme: (name?: "dark" | "light") => void;
   toggleMobileNav: () => void;
   showMobileNav: boolean;
 }
@@ -32,11 +32,18 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
   const [theme, setTheme] = useState<ThemeType>(dark);
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
 
-  const toggleTheme = () => {
-    setThemeName(themeName === "light" ? "dark" : "light");
-    setCookie(null, "theme", themeName === "light" ? "dark" : "light", {
-      maxAge: 30 * 24 * 60 * 60,
-    });
+  const toggleTheme = (name?: "dark" | "light") => {
+    if (name) {
+      setThemeName(name);
+      setCookie(null, "theme", name, {
+        maxAge: 30 * 24 * 60 * 60,
+      });
+    } else {
+      setThemeName(themeName === "light" ? "dark" : "light");
+      setCookie(null, "theme", themeName === "light" ? "dark" : "light", {
+        maxAge: 30 * 24 * 60 * 60,
+      });
+    }
   };
 
   const toggleMobileNav = () => {

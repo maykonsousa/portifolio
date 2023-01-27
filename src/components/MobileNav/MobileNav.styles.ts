@@ -4,7 +4,18 @@ interface ThemeButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   active: boolean;
 }
 
-export const MobileNavContainer = styled.div`
+interface MobileNavProps extends React.HTMLAttributes<HTMLDivElement> {
+  open: boolean;
+}
+
+export const MobileNavContainer = styled.div<MobileNavProps>`
+  ${({ open }) => {
+    if (!open) {
+      return `
+            display: none;
+        `;
+    }
+  }};
   position: absolute;
   top: 0.5rem;
   left: 1rem;
@@ -13,6 +24,22 @@ export const MobileNavContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: ${({ theme }) => theme.colors["zinc-700"]};
+  transition: all 0.2s ease-in-out;
+  //animate slide in from left
+  animation: slideIn 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+
+    0% {
+      transform: translateX(-100%);
+    }
+  }
 
   ul {
     list-style: none;
@@ -58,6 +85,7 @@ export const ThemeIconContainer = styled.button<ThemeButtonProps>`
   border: solid 2px transparent;
   background-color: transparent;
   padding: 0.5rem;
+
   color: ${({ theme }) => theme.colors["zinc-100"]};
   cursor: pointer;
   ${({ active, theme }) => {

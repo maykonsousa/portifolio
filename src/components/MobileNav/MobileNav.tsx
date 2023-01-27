@@ -1,12 +1,15 @@
+import { GeneralContext } from "@/context/GeneralContext";
+import { light } from "@/styles/themes";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import { MobileNavContainer, ThemeIconContainer } from "./MobileNav.styles";
 
 export const MobileNav = () => {
+  const { themeName, toggleTheme, showMobileNav } = useContext(GeneralContext);
   return (
-    <MobileNavContainer>
+    <MobileNavContainer open={showMobileNav}>
       <ul>
         <li>
           <Link href={"/"}>Home</Link>
@@ -28,11 +31,17 @@ export const MobileNav = () => {
         </li>
         <li>
           <div>
-            <ThemeIconContainer active={false}>
+            <ThemeIconContainer
+              active={themeName === "light"}
+              onClick={() => toggleTheme("light")}
+            >
               <FaSun size={24} />
             </ThemeIconContainer>
 
-            <ThemeIconContainer active={false}>
+            <ThemeIconContainer
+              active={themeName === "dark"}
+              onClick={() => toggleTheme("dark")}
+            >
               <FaMoon size={24} />
             </ThemeIconContainer>
           </div>
