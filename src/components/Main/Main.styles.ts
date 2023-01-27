@@ -5,7 +5,7 @@ export const MainContainer = styled.main`
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 132px);
   position: relative;
 `;
 
