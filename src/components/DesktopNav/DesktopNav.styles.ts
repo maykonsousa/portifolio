@@ -8,7 +8,7 @@ export const DesktopNavContainer = styled.ul`
   gap: 2rem;
   font-weight: bold;
 
-  @media (max-width: 720px) {
+  @media (max-width: 849px) {
     display: none;
   }
 

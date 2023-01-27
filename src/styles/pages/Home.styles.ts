@@ -5,7 +5,7 @@ export const HomePageContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 849px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,12 +24,12 @@ export const ImgContainer = styled.div`
   animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
   //mobile
-  @media (max-width: 768px) {
+  @media (max-width: 849px) {
     height: 20rem;
 
     img {
-      width: 100%;
-      height: 100%;
+      width: 12rem;
+      height: 12rem;
     }
   }
 
@@ -118,10 +118,20 @@ export const ContentContainer = styled.div`
       transform: translateX(0);
     }
   }
+  //width between 768px and 1024px
+  @media (max-width: 1024px) {
+    padding-left: 0;
+    h1 {
+      font-size: 3rem;
+    }
 
-  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 849px) {
     height: 20rem;
-    padding: 0;
     align-items: center;
 
     h1 {

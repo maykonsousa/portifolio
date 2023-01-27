@@ -14,7 +14,7 @@ export const SocialBarContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.text};
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 849px) {
     display: none;
   }
 `;

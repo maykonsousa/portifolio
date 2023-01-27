@@ -9,7 +9,7 @@ export const MobileToggleContainer = styled.button`
   height: 3rem;
   width: 3rem;
 
-  @media (min-width: 720px) {
+  @media (min-width: 849px) {
     display: none;
   }
 `;

@@ -21,7 +21,7 @@ export const HeaderContent = styled.div`
   max-width: 1200px;
   padding: 0 2rem;
 
-  @media (max-width: 720px) {
+  @media (max-width: 849px) {
     padding: 0 1rem;
     display: grid;
     grid-template-columns: 2rem 1fr;
@@ -33,7 +33,7 @@ export const HeaderLogo = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
 
-  @media (max-width: 720px) {
+  @media (max-width: 849px) {
     align-items: center;
     justify-content: center;
   }
