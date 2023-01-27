@@ -12,7 +12,7 @@ export const ThemeToggle = () => {
         type="checkbox"
         id="checkbox"
         className="checkbox"
-        onChange={toggleTheme}
+        onChange={() => toggleTheme()}
         checked={themeName === "light" ? true : false}
       />
       <label htmlFor="checkbox" className="label">
