@@ -16,6 +16,15 @@ export const MobileNavContainer = styled.div<MobileNavProps>`
         `;
     }
   }};
+
+  //hide on desktop
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  border-radius: 4px;
+
+  z-index: 100;
   position: absolute;
   top: 0.5rem;
   left: 1rem;
