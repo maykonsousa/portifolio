@@ -4,7 +4,6 @@ import React from "react";
 const Projects = () => {
   return (
     <>
-      <Header />
       <Main>
         <UnderConstruction />
       </Main>

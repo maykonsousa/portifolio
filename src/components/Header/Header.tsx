@@ -10,7 +10,6 @@ import LogoImg from "@/assets/logo.svg";
 import LogoLightImg from "@/assets/logoLight.svg";
 
 import Link from "next/link";
-import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import { GeneralContext } from "@/context/GeneralContext";
 import { DesktopNav } from "../DesktopNav/DesktopNav";
 import { MobileToggleButton } from "../MobileToggleButton/MobileToggleButton";

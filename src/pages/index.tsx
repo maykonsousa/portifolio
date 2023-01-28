@@ -1,4 +1,4 @@
-import { Header, Main } from "@/components";
+import { Main } from "@/components";
 import {
   ContentContainer,
   DownloadButton,
@@ -14,7 +14,6 @@ import { IoLocation } from "react-icons/io5";
 export default function Home() {
   return (
     <>
-      <Header />
       <Main>
         <HomePageContainer>
           <ImgContainer>

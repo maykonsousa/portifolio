@@ -2,7 +2,6 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 import Document, { DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import Global from "@/styles/global";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

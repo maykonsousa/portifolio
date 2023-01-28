@@ -1,3 +1,4 @@
+import { Header } from "@/components";
 import { GeneralContextProvider } from "@/context/GeneralContext";
 import Global from "@/styles/global";
 import { dark } from "@/styles/themes/Dark.theme";
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <title>Maykon Sousa - Front-End Developer</title>
       </Head>
+      <Header />
       <Component {...pageProps} />
       <Global />
     </GeneralContextProvider>
