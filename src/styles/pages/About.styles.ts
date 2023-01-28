@@ -7,6 +7,7 @@ export const AboutPageContainer = styled.div`
   padding: 1rem;
   height: 100%;
   width: 100%;
+  overflow: auto;
 
   //animate keyframes
 
@@ -20,6 +21,10 @@ export const AboutPageContainer = styled.div`
     align-items: center;
     height: 100%;
     padding: 1rem;
+
+    @media (max-width: 849px) {
+      padding: 0;
+    }
   }
 `;
 
@@ -41,9 +46,15 @@ export const AboutContent = styled.div`
       opacity: 1;
     }
   }
+
+  @media (max-width: 849px) {
+    justify-content: flex-start;
+    padding: 0;
+  }
 `;
 
 export const AboutImage = styled.div`
+  width: 100%;
   animation: 2s ease-in-out 0s 1 fadeImage;
   @keyframes fadeImage {
     0% {
@@ -60,6 +71,10 @@ export const AboutImage = styled.div`
     align-self: center;
     border: solid 2px ${({ theme }) => theme.colors["zinc-600"]};
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+
+  @media (max-width: 849px) {
+    display: none;
   }
 `;
 

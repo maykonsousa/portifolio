@@ -23,6 +23,10 @@ export const UnderContructionContainer = styled.div`
     svg {
       fill: ${({ theme }) => theme.colors["purple-500"]};
     }
+
+    @media (max-width: 849px) {
+      width: 80%;
+    }
   }
   h1 {
     font-size: 4rem;
@@ -40,7 +44,7 @@ export const UnderContructionContainer = styled.div`
     justify-content: center;
     text-align: center;
     h1 {
-      font-size: 3rem;
+      font-size: 2rem;
     }
     p {
       font-size: 1.5rem;

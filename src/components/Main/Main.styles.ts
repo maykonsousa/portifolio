@@ -7,6 +7,10 @@ export const MainContainer = styled.main`
   padding: 0 2rem;
   height: calc(100vh - 132px);
   position: relative;
+
+  @media (max-width: 849px) {
+    padding: 0 1rem;
+  }
 `;
 
 export const ChildrenContainer = styled.div`
@@ -19,4 +23,10 @@ export const ChildrenContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 849px) {
+    padding: 0;
+    padding-top: 1rem;
+    overflow: auto;
+  }
 `;

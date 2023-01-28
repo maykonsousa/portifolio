@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const SlideAboutContainer = styled.div`
+  //Mobile
+  @media (max-width: 849px) {
+    display: none;
+  }
+
   .swiper {
     width: 400px;
     height: 400px;

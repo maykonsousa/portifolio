@@ -44,7 +44,7 @@ const About = () => {
           <AboutContent>
             <h1>Sobre mim</h1>
             <p>
-              Bom eu tenho <span>{age}</span> anos,casado, pai de três filhos e
+              Bom eu tenho <span>{age}</span> anos, casado, pai de três filhos e
               atualmente moramos em João pessoa, Paraíba, Brazil. Atuei com
               muito tempo com apoio administrativo e logística em instituições
               públicas e privadas até que mem 2020 resolvi migrar para a área de
