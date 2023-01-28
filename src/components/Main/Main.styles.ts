@@ -10,6 +10,7 @@ export const MainContainer = styled.main`
 
   @media (max-width: 849px) {
     padding: 0 1rem;
+    height: calc(90vh - 132px);
   }
 `;
 
