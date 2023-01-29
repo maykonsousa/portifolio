@@ -1,24 +1,12 @@
-import { Main, SlideAbout } from "@/components";
-import ProfileImg from "@/assets/profileAbout.jpg";
+import { Main, SlideAbout, TechButton } from "@/components";
 import {
   AboutContent,
   AboutImage,
   AboutPageContainer,
   TechContainer,
 } from "@/styles/pages/About.styles";
-import Image from "next/image";
 
 import React from "react";
-import {
-  FaAws,
-  FaBootstrap,
-  FaFigma,
-  FaJenkins,
-  FaNodeJs,
-  FaReact,
-} from "react-icons/fa";
-import { SiPrisma } from "react-icons/si";
-import { DiScrum } from "react-icons/di";
 
 const About = () => {
   const getAge = (dateString: string) => {
@@ -59,34 +47,14 @@ const About = () => {
             </p>
 
             <TechContainer>
-              <li>
-                <FaReact size={20} /> React
-              </li>
-
-              <li>
-                <FaNodeJs size={20} />
-                Node.JS
-              </li>
-
-              <li>
-                <FaJenkins size={20} /> Jenkins
-              </li>
-              <li>
-                <FaAws size={20} /> AWS
-              </li>
-              <li>
-                <SiPrisma size={20} /> Prisma
-              </li>
-              <li>
-                <FaBootstrap size={20} />
-                Bootstrap
-              </li>
-              <li>
-                <DiScrum size={20} /> Scrum
-              </li>
-              <li>
-                <FaFigma size={20} /> Figma
-              </li>
+              <TechButton name="React" />
+              <TechButton name="NodeJs" />
+              <TechButton name="Jenkins" />
+              <TechButton name="AWS" />
+              <TechButton name="Prisma" />
+              <TechButton name="Bootstrap" />
+              <TechButton name="Figma" />
+              <TechButton name="Scrum" />
             </TechContainer>
           </AboutContent>
         </AboutPageContainer>

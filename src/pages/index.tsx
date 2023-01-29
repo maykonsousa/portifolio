@@ -43,7 +43,11 @@ export default function Home() {
                 </Link>
               </li>
             </ul>
-            <DownloadButton href="http://google.com">
+            <DownloadButton
+              href="https://drive.google.com/file/d/189oV30RCvj8O5yPYBm3MgBI3GyovovqL/view?usp=sharing"
+              download
+              target={"_blank"}
+            >
               <FaDownload /> Download CV
             </DownloadButton>
           </ContentContainer>
