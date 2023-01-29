@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const XpMobileNavContainer = styled.div`
-  //hide the nav on desktop
   @media (min-width: 768px) {
     display: none;
   }
@@ -11,6 +10,18 @@ export const XpMobileNavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  //animate keyframes
+  animation: 2s ease-in-out 0s 1 fadeContent;
+
+  @keyframes fadeContent {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const XpMobileContent = styled.div`

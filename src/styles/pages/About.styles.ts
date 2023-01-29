@@ -35,7 +35,7 @@ export const AboutContent = styled.div`
   p {
     text-align: justify;
   }
-  animation: 2 s ease-in-out 0s 1 fadeContent;
+  animation: 2s ease-in-out 0s 1 fadeContent;
 
   @keyframes fadeContent {
     0% {

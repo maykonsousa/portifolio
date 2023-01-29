@@ -36,6 +36,19 @@ export const ExperiencesList = styled.ul`
   overflow: auto;
   max-height: 100%;
   gap: 0.5rem;
+
+  //animate keyframes
+  animation: 1s ease-in-out 0s 1 slideInFromLeft;
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 `;
 
 export const ExperienceItem = styled.li<ExperienceItemProps>`
@@ -46,6 +59,17 @@ export const ExperienceItem = styled.li<ExperienceItemProps>`
   border-bottom: 1px solid ${({ theme }) => theme.colors["zinc-700"]};
   padding: 0.5rem 1rem;
   cursor: pointer;
+
+  //animate keyframes
+  animation: 1s ease-in-out 0s 1 slideInFrombottom;
+  @keyframes slideInFrombottom {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
   ${({ active, theme }) =>
     active &&
@@ -62,6 +86,17 @@ export const ExperienceDetail = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem 2rem;
+
+  //animate keyframes
+  animation: 1s ease-in-out 0s 1 slideInFromRight;
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 
   small {
     font-size: 0.8rem;
