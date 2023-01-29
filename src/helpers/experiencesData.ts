@@ -27,7 +27,7 @@ export const ExperiencesData: Experience[] = [
     logoDark: pagsDark,
     period: "junho/21 até o momento",
     description:
-      "Atuo com sustentação e incremento de novas features para uma plataforma interna utilizada por mais de 4000 colaboradores do nosso time de atendimento e também na manutenção e redesign da nova página de FAQ do pagbanke",
+      "Atuo com sustentação e incremento de novas features para uma plataforma interna utilizada por mais de 4000 colaboradores do nosso time de atendimento e também na manutenção e redesign da nova página de FAQ do Pagseguro.",
     techs: [
       "React",
       "NodeJs",

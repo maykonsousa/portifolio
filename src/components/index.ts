@@ -5,3 +5,5 @@ export { UnderConstruction } from "./UnderContruction/UnderConstruction";
 export { MobileNav } from "./MobileNav/MobileNav";
 export { SlideAbout } from "./SlideAbout/SlideAbout";
 export { TechButton } from "./TechButton/TechButton";
+export { XpDesktopNav } from "./XpDesktopNav/XpDesktopNav";
+export { XpMobileNav } from "./XpMobileNav/XpMobileNav";

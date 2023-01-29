@@ -8,6 +8,9 @@ import { MobileNavContainer, ThemeIconContainer } from "./MobileNav.styles";
 export const MobileNav = () => {
   const { themeName, toggleTheme, showMobileNav, pathName, toggleMobileNav } =
     useContext(GeneralContext);
+
+  //fechar o menu mobile ao clicar em um item
+
   return (
     <MobileNavContainer open={showMobileNav}>
       <div>
