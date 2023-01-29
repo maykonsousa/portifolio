@@ -86,6 +86,8 @@ export const ExperienceDetail = styled.div`
   }
   p {
     margin-top: 1rem;
+    overflow-wrap: break-word;
+    text-align: justify;
   }
 
   ul {

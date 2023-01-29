@@ -2,7 +2,6 @@ import React from "react";
 import {
   FaAws,
   FaBootstrap,
-  FaConfluence,
   FaDocker,
   FaFigma,
   FaGitAlt,
@@ -10,14 +9,37 @@ import {
   FaJira,
   FaNodeJs,
   FaReact,
+  FaRedhat,
   FaSass,
 } from "react-icons/fa";
-import { SiKubernetes, SiPrisma } from "react-icons/si";
-import { DiScrum } from "react-icons/di";
+import { SiPrisma, SiSap } from "react-icons/si";
+import { DiDotnet, DiScrum } from "react-icons/di";
+import { BsKanbanFill } from "react-icons/bs";
+import { RiFileExcelLine } from "react-icons/ri";
+
 import { TechButtonContainer } from "./TechButton.styles";
 
-interface TechButtonProps {
-  name: string;
+export type NameTechs =
+  | "React"
+  | "NodeJs"
+  | "AWS"
+  | "Bootstrap"
+  | "Figma"
+  | "Jenkins"
+  | "Prisma"
+  | "Scrum"
+  | "Git"
+  | "Docker"
+  | "Jira"
+  | "Sass"
+  | "Kanban"
+  | "Asp.Net"
+  | "Red Hat"
+  | "SAP"
+  | "Excel";
+
+export interface TechButtonProps {
+  name: NameTechs;
 }
 
 interface TechsIconsProps {
@@ -37,6 +59,11 @@ const TechsIcons: TechsIconsProps = {
   Docker: <FaDocker />,
   Jira: <FaJira />,
   Sass: <FaSass />,
+  Kanban: <BsKanbanFill />,
+  "Asp.Net": <DiDotnet />,
+  "Red Hat": <FaRedhat />,
+  SAP: <SiSap />,
+  Excel: <RiFileExcelLine />,
 };
 
 export const TechButton = ({ name }: TechButtonProps) => {
