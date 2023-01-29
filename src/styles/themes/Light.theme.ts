@@ -7,6 +7,7 @@ export const light: DefaultTheme = {
   colors: {
     background: "#f4f4f5",
     text: "#18181b",
+    "background-content": "#d4d4d8",
     "link-hover": "#a855f7",
     "zinc-100": "#f4f4f5",
     "zinc-200": "#e4e4e7",

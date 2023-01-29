@@ -6,6 +6,7 @@ declare module "styled-components" {
     colors: {
       background: string;
       text: string;
+      "background-content": string;
       "link-hover": string;
       "zinc-100": string;
       "zinc-200": string;

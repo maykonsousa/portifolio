@@ -7,6 +7,7 @@ export const dark: DefaultTheme = {
   colors: {
     background: "#18181b",
     text: "#f4f4f5",
+    "background-content": "#27272a",
     "link-hover": "#a855f7",
 
     "zinc-100": "#f4f4f5",
