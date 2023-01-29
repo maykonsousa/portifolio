@@ -13,7 +13,6 @@ import "swiper/css/navigation";
 import { ExperiencesData } from "@/helpers/experiencesData";
 import Image from "next/image";
 import { GeneralContext } from "@/context/GeneralContext";
-import { TechButton } from "../TechButton/TechButton";
 
 export const XpMobileNav = () => {
   const { themeName } = useContext(GeneralContext);
@@ -25,7 +24,9 @@ export const XpMobileNav = () => {
             type: "fraction",
           }}
           navigation={true}
-          modules={[Pagination, Navigation]}
+          scrollbar={true}
+          mousewheel={true}
+          modules={[Pagination]}
           className="mySwiper"
         >
           {ExperiencesData?.map(

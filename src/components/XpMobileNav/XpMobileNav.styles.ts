@@ -15,13 +15,11 @@ export const XpMobileNavContainer = styled.div`
 
 export const XpMobileContent = styled.div`
   width: 100%;
-  height: 100%;
-
-  position: relative;
+  max-height: 100%;
 
   .swiper {
     width: 100%;
-    height: 100%;
+    height: 50vh;
   }
 
   .swiper-slide {
