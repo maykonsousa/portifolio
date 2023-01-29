@@ -37,7 +37,6 @@ export const XpMobileNav = () => {
               logoLight,
               ocupation,
               period,
-              techs,
             }) => (
               <SwiperSlide key={id}>
                 <XpCard>
@@ -50,12 +49,6 @@ export const XpMobileNav = () => {
                   <h4>{ocupation}</h4>
                   <small>{period}</small>
                   <p>{description}</p>
-
-                  <ul>
-                    {techs.map((tech) => (
-                      <TechButton name={tech} key={tech} />
-                    ))}
-                  </ul>
                 </XpCard>
               </SwiperSlide>
             )
