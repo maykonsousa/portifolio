@@ -60,17 +60,6 @@ export const ExperienceItem = styled.li<ExperienceItemProps>`
   padding: 0.5rem 1rem;
   cursor: pointer;
 
-  //animate keyframes
-  animation: 1s ease-in-out 0s 1 slideInFrombottom;
-  @keyframes slideInFrombottom {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
   ${({ active, theme }) =>
     active &&
     `
