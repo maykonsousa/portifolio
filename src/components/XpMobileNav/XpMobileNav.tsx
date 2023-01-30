@@ -26,7 +26,7 @@ export const XpMobileNav = () => {
           navigation={true}
           scrollbar={true}
           mousewheel={true}
-          modules={[Pagination]}
+          modules={[Pagination, Navigation]}
           className="mySwiper"
         >
           {ExperiencesData?.map(
