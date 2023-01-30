@@ -6,11 +6,9 @@ export const MainContainer = styled.main`
   justify-content: space-between;
   padding: 0 2rem;
   height: calc(100vh - 132px);
-  position: relative;
 
   @media (max-width: 849px) {
     padding: 0 1rem;
-    height: calc(90vh - 132px);
   }
 `;
 
@@ -18,9 +16,8 @@ export const ChildrenContainer = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  padding-top: 3rem;
-  height: 100%;
+  margin-top: 3rem;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;

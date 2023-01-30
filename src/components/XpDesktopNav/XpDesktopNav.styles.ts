@@ -19,7 +19,10 @@ export const XpDesktopNavContainer = styled.div`
   height: 100%;
   width: 100%;
 
-  //any child of ExperiencesPageContent
+  //tablet
+  @media (max-width: 1024px) {
+    grid-template-columns: 3fr 5fr;
+  }
 
   > * {
     background-color: ${({ theme }) => theme.colors["background-content"]};

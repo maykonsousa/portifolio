@@ -1,7 +1,6 @@
 import { Header } from "@/components";
 import { GeneralContextProvider } from "@/context/GeneralContext";
 import Global from "@/styles/global";
-import { dark } from "@/styles/themes/Dark.theme";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
