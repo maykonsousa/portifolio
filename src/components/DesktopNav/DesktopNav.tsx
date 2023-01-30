@@ -7,8 +7,6 @@ import { DesktopNavContainer } from "./DesktopNav.styles";
 export const DesktopNav = () => {
   const { pathName } = useContext(GeneralContext);
 
-  console.log(pathName);
-
   return (
     <DesktopNavContainer>
       <li className={pathName === "/" ? "active" : ""}>

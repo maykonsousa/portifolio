@@ -3,11 +3,9 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <>
-      <Main>
-        <UnderConstruction />
-      </Main>
-    </>
+    <Main>
+      <UnderConstruction />
+    </Main>
   );
 };
 

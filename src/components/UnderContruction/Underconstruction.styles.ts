@@ -6,6 +6,7 @@ export const UnderContructionContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   transition: all 0.3s ease-in-out;
+  height: 100%;
 
   //animation slide botton to top
   animation: slide 0.5s ease-in-out;
@@ -20,12 +21,14 @@ export const UnderContructionContainer = styled.div`
 
   img {
     width: 100%;
+    margin-bottom: 2rem;
     svg {
       fill: ${({ theme }) => theme.colors["purple-500"]};
     }
 
     @media (max-width: 849px) {
-      width: 80%;
+      width: 180px;
+      height: fit-content;
     }
   }
   h1 {
@@ -38,7 +41,6 @@ export const UnderContructionContainer = styled.div`
 
   //mobile
   @media (max-width: 849px) {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;

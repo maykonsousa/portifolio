@@ -3,11 +3,9 @@ import React from "react";
 
 const Projects = () => {
   return (
-    <>
-      <Main>
-        <UnderConstruction />
-      </Main>
-    </>
+    <Main>
+      <UnderConstruction />
+    </Main>
   );
 };
 

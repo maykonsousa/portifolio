@@ -1,6 +1,6 @@
 import { GeneralContext } from "@/context/GeneralContext";
 import Link from "next/link";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { EmailBar } from "../EmailBar/EmailBar";
 import { MobileNav } from "../MobileNav/MobileNav";
 import { NextRedirect } from "../NextRedirect/NextRedirect";
@@ -14,6 +14,7 @@ interface MainProps {
 
 export const Main = ({ children }: MainProps) => {
   const { showMobileNav } = useContext(GeneralContext);
+
   return (
     <MainContainer>
       <Socialbar />

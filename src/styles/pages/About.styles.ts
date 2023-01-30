@@ -84,6 +84,10 @@ export const TechContainer = styled.ul`
   gap: 1rem;
   justify-content: space-between;
   list-style: none;
+
+  @media (max-width: 849px) {
+    justify-content: center;
+  }
   li {
     display: flex;
     align-items: center;

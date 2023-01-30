@@ -5,6 +5,9 @@ export const HomePageContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   overflow: hidden;
+  height: 100%;
+  > div {
+  }
 
   @media (max-width: 849px) {
     display: flex;
@@ -17,7 +20,6 @@ export const HomePageContainer = styled.div`
 
 export const ImgContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 20rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +28,7 @@ export const ImgContainer = styled.div`
 
   //mobile
   @media (max-width: 849px) {
-    height: 20rem;
+    height: 15rem;
 
     img {
       width: 12rem;
@@ -62,7 +64,7 @@ export const ImgContainer = styled.div`
 
 export const ContentContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 20rem);
+  height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
