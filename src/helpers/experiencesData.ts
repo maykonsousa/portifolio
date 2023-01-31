@@ -13,6 +13,7 @@ export interface Experience {
   ocupation: string;
   logoLight: string | StaticImageData;
   logoDark: string | StaticImageData;
+  logo?: string | StaticImageData;
   period: string;
   description: string;
   techs: NameTechs[];

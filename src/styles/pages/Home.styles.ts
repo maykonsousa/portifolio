@@ -6,6 +6,8 @@ export const HomePageContainer = styled.div`
   gap: 2rem;
   overflow: hidden;
   height: 100%;
+  flex: auto;
+  min-height: calc(85vh - 6rem);
   > div {
   }
 
@@ -20,6 +22,7 @@ export const HomePageContainer = styled.div`
 
 export const ImgContainer = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

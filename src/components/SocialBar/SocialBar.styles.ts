@@ -8,6 +8,7 @@ export const SocialBarContainer = styled.div`
   height: 100%;
   min-height: 100%;
   gap: 1rem;
+  min-height: 85vh;
   div {
     width: 0.25rem;
     height: 5rem;

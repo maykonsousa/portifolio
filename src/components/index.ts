@@ -7,3 +7,4 @@ export { SlideAbout } from "./SlideAbout/SlideAbout";
 export { TechButton } from "./TechButton/TechButton";
 export { XpDesktopNav } from "./XpDesktopNav/XpDesktopNav";
 export { XpMobileNav } from "./XpMobileNav/XpMobileNav";
+export { ProjectCard } from "./ProjectCard/ProjectCard";

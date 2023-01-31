@@ -5,7 +5,9 @@ export const ExperiencesPageContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  flex: 1;
   height: 100%;
+  max-height: calc(85 vh - 6rem);
   width: 100%;
   padding: 1rem 2rem;
   > p {

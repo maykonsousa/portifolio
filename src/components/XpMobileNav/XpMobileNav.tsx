@@ -16,6 +16,7 @@ import { GeneralContext } from "@/context/GeneralContext";
 
 export const XpMobileNav = () => {
   const { themeName } = useContext(GeneralContext);
+
   return (
     <XpMobileNavContainer>
       <XpMobileContent>

@@ -6,6 +6,8 @@ export const AboutPageContainer = styled.div`
   gap: 2rem;
   padding: 1rem;
   height: 100%;
+  max-height: calc(85vh - 6rem);
+  flex: 1;
   width: 100%;
   overflow: auto;
 

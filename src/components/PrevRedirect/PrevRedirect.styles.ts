@@ -5,7 +5,6 @@ export const PrevContainer = styled.button`
   justify-content: center;
   align-items: center;
   height: 3rem;
-  margin-bottom: 1rem;
   width: 100%;
   background: none;
   outline: none;

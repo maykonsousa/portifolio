@@ -7,7 +7,8 @@ export const EmailBarContainer = styled.div`
   gap: 1rem;
   flex-direction: column;
   height: 100%;
-  min-height: 100%;
+
+  min-height: 85vh;
   a {
     display: block;
     text-orientation: mixed;

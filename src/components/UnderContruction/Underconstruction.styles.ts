@@ -7,6 +7,7 @@ export const UnderContructionContainer = styled.div`
   flex-direction: column;
   transition: all 0.3s ease-in-out;
   height: 100%;
+  flex: 1;
 
   //animation slide botton to top
   animation: slide 0.5s ease-in-out;

@@ -5,8 +5,11 @@ export const MainContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  height: calc(100vh - 150px);
-  > div {
+  min-height: 85vh;
+  max-height: 85vh;
+
+  width: 100%;
+  bir > div {
   }
 
   @media (max-width: 849px) {
@@ -15,12 +18,15 @@ export const MainContainer = styled.div`
 `;
 
 export const ChildrenContainer = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 85vh;
+  margin: 0 auto;
   justify-content: space-between;
 
   @media (max-width: 849px) {

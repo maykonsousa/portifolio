@@ -5,7 +5,6 @@ export const NextContainer = styled.button`
   justify-content: center;
   align-items: center;
   height: 3rem;
-  margin-top: 1rem;
   width: 100%;
   background: none;
   outline: none;

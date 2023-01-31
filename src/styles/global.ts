@@ -1,5 +1,5 @@
 //create a global style
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
     * {
@@ -27,7 +27,25 @@ export default createGlobalStyle`
         color: ${({ theme }) => theme.colors.text};
         -webkit-font-smoothing: antialiased;
         font-family: 'Roboto', sans-serif;
+        
+
+
     }
+    ::-webkit-scrollbar {
+   width: 10px;
+   background-color: ${({ theme }) => theme.colors["background-content"]};
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: ${({ theme }) => theme.colors["purple-500"]};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors["purple-600"]};
+  }
+}
+
+
+
 
     body, input, textarea, button {
         font-family: 'Roboto', sans-serif;
