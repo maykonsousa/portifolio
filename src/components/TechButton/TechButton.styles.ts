@@ -8,10 +8,21 @@ export const TechButtonContainer = styled.li`
   padding: 0.3rem 0.5rem;
   width: 7rem;
   font-weight: bold;
+  justify-content: space-between;
+
+  //tablet
+  @media (max-width: 1200px) {
+    width: 6rem;
+    font-size: 80%;
+    justify-content: center;
+    svg {
+      width: 1.5rem;
+    }
+  }
 
   //mobile
   @media (max-width: 768px) {
-    width: 6rem;
+    width: 5rem;
     font-size: 75%;
     display: flex;
     align-items: center;

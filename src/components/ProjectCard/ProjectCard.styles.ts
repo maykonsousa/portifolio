@@ -4,32 +4,23 @@ export const ProjectCardContainer = styled.div`
   transition: 2s;
   transform-style: preserve-3d;
   width: 100%;
-  height: 100%;
-  min-height: 28vh;
+  padding-bottom: 56.25%;
   border-radius: 8px;
   transition: 0.6s;
+  overflow-y: auto;
+  position: relative;
 
-  &:hover .front {
-    transform: rotateY(180deg);
-    transition: 0.6s;
-  }
-
-  &:hover .back {
-    transform: rotateY(0deg);
-    transition: 0.6s;
-  }
   > div {
-    position: relative;
     transition: 0.6s;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     position: absolute;
+    border: 2px solid ${({ theme }) => theme.colors["purple-500"]};
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,12 +32,80 @@ export const ProjectCardContainer = styled.div`
       z-index: 2;
       background-color: ${({ theme }) => theme.colors["background-content"]};
       transition: 0.6s;
+      overflow: hidden;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     &.back {
       transform: rotateY(180deg);
-      background-color: ${({ theme }) => theme.colors["purple-500"]};
+      background-color: ${({ theme }) => theme.colors["background-content"]};
       transition: 0.6s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      gap: 0.5rem;
+
+      ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+  &.flipped .back {
+    transform: rotateY(0deg);
+  }
+
+  &.flipped .front {
+    transform: rotateY(180deg);
+  }
+`;
+
+export const CardLinks = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: solid 2px ${({ theme }) => theme.colors["text"]};
+    color: ${({ theme }) => theme.colors["text"]};
+    background-color: transparent;
+
+    @media (max-width: 1280px) {
+      padding: 0.2rem 0.5rem;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: solid 2px ${({ theme }) => theme.colors["text"]};
+
+    @media (max-width: 1280px) {
+      padding: 0.2rem 0.5rem;
+    }
+
+    &:hover {
+      border: solid 2px ${({ theme }) => theme.colors["purple-500"]};
     }
   }
 `;

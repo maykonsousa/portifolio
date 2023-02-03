@@ -12,7 +12,7 @@ import {
   FaRedhat,
   FaSass,
 } from "react-icons/fa";
-import { SiPrisma, SiSap } from "react-icons/si";
+import { SiPostgresql, SiPrisma, SiSap } from "react-icons/si";
 import { DiDotnet, DiScrum } from "react-icons/di";
 import { BsKanbanFill } from "react-icons/bs";
 import { RiFileExcelLine } from "react-icons/ri";
@@ -36,7 +36,8 @@ export type NameTechs =
   | "Asp.Net"
   | "Red Hat"
   | "SAP"
-  | "Excel";
+  | "Excel"
+  | "Postgres";
 
 export interface TechButtonProps {
   name: NameTechs;
@@ -64,6 +65,7 @@ const TechsIcons: TechsIconsProps = {
   "Red Hat": <FaRedhat />,
   SAP: <SiSap />,
   Excel: <RiFileExcelLine />,
+  Postgres: <SiPostgresql />,
 };
 
 export const TechButton = ({ name }: TechButtonProps) => {

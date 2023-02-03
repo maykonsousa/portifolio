@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const XpMobileNavContainer = styled.div`
+export const ProjectsGroupMobileContainer = styled.div`
+  //only for mobile
   @media (min-width: 768px) {
     display: none;
   }
@@ -11,6 +12,7 @@ export const XpMobileNavContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex: 1;
+  padding: 1rem 0;
 
   //animate keyframes
   animation: 2s ease-in-out 0s 1 fadeContent;
@@ -25,19 +27,19 @@ export const XpMobileNavContainer = styled.div`
   }
 `;
 
-export const XpMobileContent = styled.div`
+export const MobileContent = styled.div`
   width: 100%;
-  max-height: 100%;
-  flex: 1;
+  height: 100%;
 
   .swiper {
     width: 100%;
-    height: 54vh;
+    height: 65vh;
+    background: transparent;
+    padding: 0 2rem;
   }
 
   .swiper-slide {
     text-align: center;
-    font-size: 18px;
     padding: 0 1rem;
     padding-top: 0.5rem;
     display: -webkit-box;
@@ -70,46 +72,5 @@ export const XpMobileContent = styled.div`
 
   .swiper-button-prev {
     margin-left: -1rem;
-  }
-`;
-
-export const XpCard = styled.div`
-  width: 100%;
-  height: 100%;
-  background: ${({ theme }) => theme.colors["background-content"]};
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin: 1rem;
-  margin-top: 2rem;
-  border-radius: 8px;
-  padding: 1rem;
-  padding-top: 1rem;
-  gap: 0.5rem;
-  max-height: fit-content;
-  overflow: auto;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  flex: 1;
-
-  > div {
-    display: flex;
-  }
-
-  > img {
-    margin-bottom: 1rem;
-  }
-
-  p {
-    margin: 2rem 1rem;
-    text-align: justify;
-    font-size: 0.9rem;
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
   }
 `;

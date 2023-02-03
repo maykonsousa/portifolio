@@ -4,6 +4,7 @@ import { createContext, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { light, dark } from "../styles/themes";
 import { useRouter } from "next/router";
+import { IProjectData, projectsData } from "@/helpers/projectsData";
 
 interface GeneralContextType {
   themeName: "light" | "dark";
@@ -11,6 +12,12 @@ interface GeneralContextType {
   toggleMobileNav: () => void;
   onPrevRedirect: () => void;
   onNextRedirect: () => void;
+  onOpenVideoModal: () => void;
+  onCloseVideoModal: () => void;
+  onSelectProject: (project: IProjectData | null) => void;
+  projectSelected: IProjectData | null;
+  projects: IProjectData[];
+  openVideoModal: boolean;
   showMobileNav: boolean;
   pathName: string;
   prevPath: string | null;
@@ -33,6 +40,7 @@ interface RedirectMap {
 
 type ThemeType = typeof light | typeof dark;
 
+//mapping de rotas
 export const PathRedirectMap: RedirectMap = {
   "/": {
     prev: null,
@@ -67,6 +75,7 @@ export const GeneralContext = createContext<GeneralContextType>({
 
 //create provider
 export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
+  //estados globais
   const cookieTheme = parseCookies().theme as "light" | "dark";
   const [themeName, setThemeName] = useState<"light" | "dark">(
     cookieTheme || "dark"
@@ -74,12 +83,18 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
   const [theme, setTheme] = useState<ThemeType>(dark);
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
   const [pathName, setPathName] = useState<string>("/");
+  const [openVideoModal, setOpenVideoModal] = useState<boolean>(false);
+  const [projectSelected, setProjectSelected] = useState<IProjectData | null>(
+    null
+  );
 
-  const router = useRouter();
+  const [projects, setProjects] = useState<IProjectData[]>([]);
 
-  const prevPath = PathRedirectMap[pathName].prev;
-  const nextPath = PathRedirectMap[pathName].next;
+  const onSelectProject = (project: IProjectData | null) => {
+    setProjectSelected(project);
+  };
 
+  //troca de tema
   const toggleTheme = (name?: "dark" | "light") => {
     if (name) {
       setThemeName(name);
@@ -94,10 +109,15 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
     }
   };
 
+  // abre e fecha o menu mobile
   const toggleMobileNav = () => {
     setShowMobileNav(!showMobileNav);
   };
 
+  //navegação pelas setas
+  const router = useRouter();
+  const prevPath = PathRedirectMap[pathName].prev;
+  const nextPath = PathRedirectMap[pathName].next;
   const onPrevRedirect = () => {
     if (prevPath) {
       router.push(prevPath);
@@ -110,6 +130,14 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
     }
   };
 
+  const onOpenVideoModal = () => {
+    setOpenVideoModal(true);
+  };
+
+  const onCloseVideoModal = () => {
+    setOpenVideoModal(false);
+  };
+
   useEffect(() => {
     setCookie(null, "theme", themeName, {
       maxAge: 30 * 24 * 60 * 60,
@@ -119,6 +147,10 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
     setPathName(router.asPath);
   }, [themeName, router]);
 
+  useEffect(() => {
+    setProjects(projectsData);
+  }, []);
+
   return (
     <GeneralContext.Provider
       value={{
@@ -127,6 +159,12 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
         toggleMobileNav,
         onPrevRedirect,
         onNextRedirect,
+        onOpenVideoModal,
+        onCloseVideoModal,
+        onSelectProject,
+        projectSelected,
+        projects,
+        openVideoModal,
         showMobileNav,
         prevPath,
         nextPath,

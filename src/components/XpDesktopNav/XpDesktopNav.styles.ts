@@ -18,6 +18,7 @@ export const XpDesktopNavContainer = styled.div`
   grid-template-columns: 1fr 3fr;
   height: 100%;
   width: 100%;
+  flex: 1;
 
   //tablet
   @media (max-width: 1024px) {
@@ -38,6 +39,7 @@ export const ExperiencesList = styled.ul`
   flex-direction: column;
   overflow: auto;
   max-height: 100%;
+  flex: 1;
   gap: 0.5rem;
 
   //animate keyframes
