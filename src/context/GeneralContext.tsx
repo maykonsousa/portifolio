@@ -14,7 +14,8 @@ interface GeneralContextType {
   onNextRedirect: () => void;
   onOpenVideoModal: () => void;
   onCloseVideoModal: () => void;
-  onSelectProject: (project: IProjectData | null) => void;
+  onSelectProject: (project: IProjectData) => void;
+  unSelectProject: () => void;
   projectSelected: IProjectData | null;
   projects: IProjectData[];
   openVideoModal: boolean;
@@ -90,8 +91,12 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
 
   const [projects, setProjects] = useState<IProjectData[]>([]);
 
-  const onSelectProject = (project: IProjectData | null) => {
-    setProjectSelected(project);
+  const onSelectProject = (project: IProjectData) => {
+    project ? setProjectSelected(project) : null;
+  };
+
+  const unSelectProject = () => {
+    setProjectSelected(null);
   };
 
   //troca de tema
@@ -162,6 +167,7 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
         onOpenVideoModal,
         onCloseVideoModal,
         onSelectProject,
+        unSelectProject,
         projectSelected,
         projects,
         openVideoModal,

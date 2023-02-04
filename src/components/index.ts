@@ -12,3 +12,4 @@ export { VideoModal } from "./VideoModal/VideoModal";
 export { ProjectsGroupDesktop } from "./ProjectsGroupDesktop/ProjectsGroupDesktop";
 export { ProjectsGroupMobile } from "./ProjectsGroupMobile/ProjectsGroupMobile";
 export { ProjectCardMobile } from "./ProjectCardMobile/ProjectCardMobile";
+export { ConditionalRender } from "./ConditionalRender/ConditionalRender";

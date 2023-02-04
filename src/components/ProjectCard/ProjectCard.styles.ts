@@ -50,6 +50,20 @@ export const ProjectCardContainer = styled.div`
       justify-content: space-between;
       padding: 1rem 2rem;
       gap: 0.5rem;
+      > div.header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          cursor: pointer;
+
+          &:hover {
+            color: ${({ theme }) => theme.colors["purple-500"]};
+          }
+        }
+      }
 
       ul {
         list-style: none;

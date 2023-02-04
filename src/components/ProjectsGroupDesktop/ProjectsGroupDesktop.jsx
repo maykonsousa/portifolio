@@ -6,6 +6,7 @@ import { GeneralContext } from "@/context/GeneralContext";
 export const ProjectsGroupDesktop = () => {
   const { projects, projectSelected, onSelectProject } =
     useContext(GeneralContext);
+
   return (
     <ProjectsGroup>
       {projects?.map((project) => (

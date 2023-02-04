@@ -1,10 +1,11 @@
 import Image, { StaticImageData } from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CardLinks, ProjectCardContainer } from "./ProjectCard.styles";
 import Link from "next/link";
 import { NameTechs, TechButton } from "../TechButton/TechButton";
 import { FaGithub, FaGlobe, FaYoutube } from "react-icons/fa";
 import { GeneralContext } from "@/context/GeneralContext";
+import { GiReturnArrow } from "react-icons/gi";
 
 interface ProjectCardProps {
   active: boolean;
@@ -24,14 +25,23 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ active, project, onFlip }: ProjectCardProps) => {
-  const { onCloseVideoModal, onOpenVideoModal } = useContext(GeneralContext);
+  const { onOpenVideoModal, unSelectProject } = useContext(GeneralContext);
+  const [flipped, setFlipped] = useState("");
+
+  useEffect(() => {
+    setFlipped(active ? "flipped" : "");
+  }, [active]);
+
   return (
-    <ProjectCardContainer className={active ? "flipped" : ""} onClick={onFlip}>
-      <div className="front">
+    <ProjectCardContainer className={flipped}>
+      <div className="front" onClick={onFlip}>
         <Image src={project?.image} alt="imagem projeto" width={480} />
       </div>
       <div className="back">
-        <h2>{project?.title}</h2>
+        <div className="header">
+          <h2>{project?.title}</h2>
+          <GiReturnArrow onClick={unSelectProject} />
+        </div>
 
         <p>{project?.description}</p>
 

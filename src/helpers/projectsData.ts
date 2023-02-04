@@ -23,10 +23,10 @@ export const projectsData: IProjectData[] = [
     title: "NLW Community",
     image: nlwImage,
     description:
-      "Aplicação feita com o intuito de integrar os alunos participantes do treinamento Next Level Week. Produzido pela Rocketseat. A ideia é que usuários cadastrados possam acompanhar um ranking de indicações e também visualizar perfis de outros usuários permitindo que pudesem se conectar pelas redes sociais. Projeto construído com front-end feito em Next e o back em Node",
+      "Aplicação com o intuito de criar uma comunidade entre os alunos participantes do NLW Setup, evento produzido pela Rocketseat.",
     techs: ["React", "NodeJs", "Prisma", "Postgres"],
     links: {
-      video: "https://www.youtube.com/embed/XiyLcUevd4s",
+      video: "https://www.youtube.com/embed/cGpYIeX8bFY",
       acess: "https://nlwcommunity.vercel.app/",
       repository: "https://github.com/maykonsousa/nlw_community",
     },
@@ -36,12 +36,12 @@ export const projectsData: IProjectData[] = [
     title: "Portifólio V2",
     image: portifolioV2,
     description:
-      "Aplicação feita com o intuito de integrar os alunos participantes do treinamento Next Level Week. Produzido pela Rocketseat. A ideia é que usuários cadastrados possam acompanhar um ranking de indicações e também visualizar perfis de outros usuários permitindo que pudesem se conectar pelas redes sociais. Projeto construído com front-end feito em Next e o back em Node",
-    techs: ["React", "NodeJs", "Prisma", "Postgres"],
+      "Esse foi o meu segundo portifólio, onde eu tentei aplicar o máximo de conhecimento que eu tinha na época. Foi feito com HTML, CSS, Bootstrap e Javascript.",
+    techs: ["HTML", "CSS", "Bootstrap", "JQuery"],
     links: {
-      video: "https://www.youtube.com/embed/XiyLcUevd4s",
-      acess: "https://nlwcommunity.vercel.app/",
-      repository: "https://github.com/maykonsousa/nlw_community",
+      video: "https://www.youtube.com/embed/EZLm2mP5amo",
+      acess: "https://maykonsousa.github.io",
+      repository: "https://github.com/maykonsousa/maykonsousa.github.io",
     },
   },
 ];

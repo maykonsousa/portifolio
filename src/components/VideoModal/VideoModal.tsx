@@ -26,7 +26,7 @@ export const VideoModal = ({ project }: VideoModalProps) => {
               <AiOutlineClose size={24} onClick={onCloseVideoModal} />
             </ModalHeader>
             <VideoContainer
-              src={project?.links.video}
+              src={`${project?.links.video}?&autoplay=1`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></VideoContainer>

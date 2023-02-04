@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property="og:description"
-          content="Desenvolvedor front-end apaixonado por tecnologia, Coca-cola e doguinhos caramelos."
+          content="Desenvolvedor front-end apaixonado por tecnologia, Coca-Cola e doguinhos caramelos."
         />
         <title>Maykon Sousa - Front-End Developer</title>
       </Head>
