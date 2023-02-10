@@ -14,7 +14,15 @@ export const ProjectsGroup = styled.div`
   justify-content: center;
 
   //tablet
-  @media (max-width: 1280px) {
+  @media (max-width: 990px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  //mobile
+  @media (max-width: 768px) {
     display: none;
   }
 `;

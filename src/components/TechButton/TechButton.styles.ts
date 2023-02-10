@@ -22,11 +22,12 @@ export const TechButtonContainer = styled.li`
 
   //mobile
   @media (max-width: 768px) {
-    width: 5rem;
     font-size: 75%;
     display: flex;
+    padding: 0;
     align-items: center;
     justify-content: center;
+    width: 4rem;
     svg {
       display: none;
     }

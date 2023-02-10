@@ -7,6 +7,8 @@ export const ProjectCardContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  max-width: 468px;
+
   border-radius: 8px;
   flex: 1;
   padding-bottom: 2rem;
@@ -25,6 +27,13 @@ export const ProjectCover = styled.div`
   border-top-right-radius: 8px;
   overflow: hidden;
   object-fit: content;
+
+  //mais de 590px
+  @media (min-width: 590px) {
+    padding-bottom: 0;
+    height: 100%;
+    max-height: 260px;
+  }
 
   img {
     max-width: 100%;

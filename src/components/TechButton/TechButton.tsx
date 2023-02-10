@@ -81,7 +81,8 @@ const TechsIcons: TechsIconsProps = {
 export const TechButton = ({ name }: TechButtonProps) => {
   return (
     <TechButtonContainer>
-      {TechsIcons[name] || null} {name}
+      {TechsIcons[name] || null} 
+      <span>{name}</span>
     </TechButtonContainer>
   );
 };
