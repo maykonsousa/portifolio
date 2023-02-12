@@ -147,7 +147,7 @@ export const FormContainer = styled.div`
 
     @media (max-width: 849px) {
       padding: 0;
-      height: 75vh;
+      height: 70vh;
     }
   }
 
