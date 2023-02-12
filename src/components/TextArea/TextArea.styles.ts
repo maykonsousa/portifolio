@@ -53,6 +53,8 @@ export const TextAreaContainer = styled.div`
       outline: none;
       background: transparent;
       padding: 1rem 2rem;
+      color: ${({ theme }) => theme.colors["text"]};
+      font-size: 1.5rem;
     }
   }
 `;
