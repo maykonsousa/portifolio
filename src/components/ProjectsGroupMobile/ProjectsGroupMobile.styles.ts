@@ -33,7 +33,7 @@ export const MobileContent = styled.div`
 
   .swiper {
     width: 100%;
-    height: 65vh;
+    height: 60vh;
     background: transparent;
     padding: 0 2rem;
   }
@@ -74,3 +74,4 @@ export const MobileContent = styled.div`
     margin-left: -1rem;
   }
 `;
+

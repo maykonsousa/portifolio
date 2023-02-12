@@ -1,15 +1,19 @@
-import { Main } from "@/components";
-import { Input } from "@/components/Input/Input";
+import { Main, TextArea } from "@/components";
+import { Input } from "@/components";
 import {
   ContactContent,
   ContactPageContainer,
+  EmailButton,
+  FormButtonsContainer,
   FormContainer,
   InformationsCard,
   InformationsContainer,
+  WhatsappButton,
 } from "@/styles/pages/Contact.styles";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import {
+  FaEnvelope,
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
@@ -36,6 +40,12 @@ const Contact = () => {
 
   const handleChange = ({ name, value }: IInputProps) => {
     setValues({ ...values, [name]: value });
+  };
+
+  const SendWhatsAppMessage = () => {
+    const url = `https://api.whatsapp.com/send?phone=5561992943297&text=`;
+    const message = `*MENSAGEM ENVIADA PELO SITE*%0A%0A*Nome:* ${values.name}%0A*E-mail:* ${values.email}%0A*Telefone:* ${values.phone}%0A*Mensagem:* ${values.message}`;
+    window.open(url + message, "_blank");
   };
 
   return (
@@ -107,45 +117,46 @@ const Contact = () => {
               </div>
             </InformationsCard>
           </InformationsContainer>
-          <FormContainer action="">
-            <Input
-              label="Nome"
-              name="name"
-              type="text"
-              placeholder="Digite o seu nome"
-              value={values.name}
-              setValue={handleChange}
-            />
-            <Input
-              label="E-mail"
-              name="email"
-              type="text"
-              placeholder="Digite o seu e-mail"
-              value={values.email}
-              setValue={handleChange}
-            />
+          <FormContainer >
+            <form action="">
+             <Input
+             label="Nome"
+             name="name"
+             type="text"
+             placeholder="Digite o seu nome"
+             value={values.name}
+             setValue={handleChange}
+           />
+           <Input
+             label="E-mail"
+             name="email"
+             type="text"
+             placeholder="Digite o seu e-mail"
+             value={values.email}
+             setValue={handleChange}
+           />
 
-            <Input
-              label="Telefone"
-              name="phone"
-              type="tel"
-              placeholder="Digite o seu telefone"
-              value={values.phone}
-              setValue={handleChange}
-            />
+           <Input
+             label="Telefone"
+             name="phone"
+             type="tel"
+             placeholder="Digite o seu telefone"
+             value={values.phone}
+             setValue={handleChange}
+           />
 
-            <textarea
-              name="message"
-              id="message"
-              cols={30}
-              rows={10}
-              placeholder="Mensagem"
-              value={values.message}
-              onChange={(e) =>
-                handleChange({ name: "message", value: e.target.value })
-              }
-              style={{ resize: "none", flex: 1, padding: "1rem" }}
-            ></textarea>
+          <TextArea 
+           label={"Mensagem"}
+           name={"message"}
+           value={values.message}
+           changeValue={handleChange}
+          />
+         <FormButtonsContainer>
+           <EmailButton type="submit"><FaEnvelope/> Enviar</EmailButton>
+           <WhatsappButton type="button" onClick={SendWhatsAppMessage}><FaWhatsapp/>Enviar</WhatsappButton>
+         </FormButtonsContainer>
+            </form>
+           
           </FormContainer>
         </ContactContent>
       </ContactPageContainer>

@@ -20,5 +20,8 @@ export const light: DefaultTheme = {
     "zinc-900": "#18181b",
     "purple-500": "#a855f7",
     "purple-600": "#b072fc",
+    "green-500": "#22c55e",
+    "green-600": "#16a34a",
   },
 };
+

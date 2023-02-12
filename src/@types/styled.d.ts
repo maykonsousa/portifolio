@@ -19,6 +19,9 @@ declare module "styled-components" {
       "zinc-900": string;
       "purple-500": string;
       "purple-600": string;
+      "green-500": string;
+      "green-600": string;
     };
   }
 }
+

@@ -113,3 +113,4 @@ export const XpCard = styled.div`
     gap: 0.5rem;
   }
 `;
+
