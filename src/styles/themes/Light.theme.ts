@@ -22,6 +22,8 @@ export const light: DefaultTheme = {
     "purple-600": "#b072fc",
     "green-500": "#22c55e",
     "green-600": "#16a34a",
+    "red-500": "#ef4444",
+    "red-600": "#dc2626",
   },
 };
 

@@ -21,6 +21,8 @@ declare module "styled-components" {
       "purple-600": string;
       "green-500": string;
       "green-600": string;
+      "red-500": string;
+      "red-600": string;
     };
   }
 }

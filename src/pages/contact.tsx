@@ -1,5 +1,6 @@
-import { Main, TextArea } from "@/components";
+import { Main, SendMailModal, TextArea } from "@/components";
 import { Input } from "@/components";
+import { GeneralContext } from "@/context/GeneralContext";
 import {
   ContactContent,
   ContactPageContainer,
@@ -11,7 +12,7 @@ import {
   WhatsappButton,
 } from "@/styles/pages/Contact.styles";
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import {
   FaEnvelope,
   FaGithub,
@@ -36,21 +37,18 @@ interface IInputProps {
 }
 const Contact = () => {
   const [values, setValues] = useState(initialValues);
-  console.log(values);
+  const {onSendWhatsAppMessage, onSendEmail} = useContext(GeneralContext)
 
   const handleChange = ({ name, value }: IInputProps) => {
     setValues({ ...values, [name]: value });
   };
 
-  const SendWhatsAppMessage = () => {
-    const url = `https://api.whatsapp.com/send?phone=5561992943297&text=`;
-    const message = `*MENSAGEM ENVIADA PELO SITE*%0A%0A*Nome:* ${values.name}%0A*E-mail:* ${values.email}%0A*Telefone:* ${values.phone}%0A*Mensagem:* ${values.message}`;
-    window.open(url + message, "_blank");
-  };
+ 
 
   return (
     <Main>
       <ContactPageContainer>
+        <SendMailModal formData={values} />
         <h1>Contatos</h1>
         <ContactContent>
           <InformationsContainer>
@@ -118,7 +116,12 @@ const Contact = () => {
             </InformationsCard>
           </InformationsContainer>
           <FormContainer >
-            <form action="">
+            <form onSubmit={
+              (e:FormEvent)=>{
+                e.preventDefault()
+                onSendEmail(values)
+              }
+            }>
              <Input
              label="Nome"
              name="name"
@@ -153,7 +156,7 @@ const Contact = () => {
           />
          <FormButtonsContainer>
            <EmailButton type="submit"><FaEnvelope/> Enviar</EmailButton>
-           <WhatsappButton type="button" onClick={SendWhatsAppMessage}><FaWhatsapp/>Enviar</WhatsappButton>
+           <WhatsappButton type="button" onClick={()=>onSendWhatsAppMessage(values)}><FaWhatsapp/>Enviar</WhatsappButton>
          </FormButtonsContainer>
             </form>
            

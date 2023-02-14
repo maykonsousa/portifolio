@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { light, dark } from "../styles/themes";
 import { useRouter } from "next/router";
 import { IProjectData, projectsData } from "@/helpers/projectsData";
+import { sendMailService } from "@/services/sendMailService";
 
 interface GeneralContextType {
   themeName: "light" | "dark";
@@ -15,7 +16,10 @@ interface GeneralContextType {
   onOpenVideoModal: () => void;
   onCloseVideoModal: () => void;
   onSelectProject: (project: IProjectData) => void;
+  onSendEmail: (data: ISendEmailData) => void;
   unSelectProject: () => void;
+  onCancelSendEmail: () => void;
+  onSendWhatsAppMessage: (data:ISendEmailData) => void;
   projectSelected: IProjectData | null;
   projects: IProjectData[];
   openVideoModal: boolean;
@@ -23,11 +27,17 @@ interface GeneralContextType {
   pathName: string;
   prevPath: string | null;
   nextPath: string | null;
+  sendEmailState: ISendEmailProps;
 }
 
 interface GeneralProviderProps {
   children: React.ReactNode;
   cookieTheme?: "light" | "dark";
+}
+
+interface ISendEmailProps {
+  status: "success" | "error" | "loading" | "redirect" | null;
+  message: string;
 }
 
 interface RedirectMapProps {
@@ -37,6 +47,13 @@ interface RedirectMapProps {
 
 interface RedirectMap {
   [key: string]: RedirectMapProps;
+}
+
+interface ISendEmailData {
+  name: string;
+  email: string;
+  message: string;
+  phone: string;
 }
 
 type ThemeType = typeof light | typeof dark;
@@ -69,6 +86,11 @@ export const PathRedirectMap: RedirectMap = {
   },
 };
 
+const initialSendEmailState:ISendEmailProps = {
+  status: null,
+  message: "",
+}
+
 //create context
 export const GeneralContext = createContext<GeneralContextType>({
   themeName: "light" || "dark",
@@ -90,6 +112,9 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
   );
 
   const [projects, setProjects] = useState<IProjectData[]>([]);
+  const [sendEmailState, setSendEmailState] = useState<ISendEmailProps>(initialSendEmailState);
+
+
 
   const onSelectProject = (project: IProjectData) => {
     project ? setProjectSelected(project) : null;
@@ -143,6 +168,54 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
     setOpenVideoModal(false);
   };
 
+  
+
+
+  const onSendEmail = async (data: ISendEmailData) => {
+    setSendEmailState({message:"Enviando e-mail", status: "loading"})
+
+
+    try {
+      await sendMailService(data)
+      setSendEmailState({status: "success", message: "E-mail enviado com sucesso!"})
+    } catch  {
+      setSendEmailState({status: "error", message: "Erro ao enviar e-mail! Deseja enviar via Whatsapp?"})
+    }
+  }
+
+  const onCancelSendEmail = () => {
+    setSendEmailState(initialSendEmailState)
+  }
+
+  const onSendWhatsAppMessage = async (data:ISendEmailData) => {
+    
+
+  
+      setSendEmailState({message:"Abrindo o Whatsapp Web...", status: "redirect"})
+    
+
+    setTimeout(() => {
+      const url = `https://api.whatsapp.com/send?phone=5561992943297&text=`;
+    const message = 
+    `*MENSAGEM ENVIADA PELO SITE*%0A%0A
+    *Nome:* ${data.name}%0A
+    *E-mail:* ${data.email}%0A
+    *Telefone:* ${data.phone}%0A
+    *Mensagem:*%0A%0A 
+    ${data.message}`;
+    window.open(`${url}${message}`, "_blank");
+    }, 2000);
+    
+
+    
+
+    setTimeout(() => {
+      setSendEmailState(initialSendEmailState)
+    }, 2000)
+  };
+
+  
+
   useEffect(() => {
     setCookie(null, "theme", themeName, {
       maxAge: 30 * 24 * 60 * 60,
@@ -159,7 +232,6 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
   return (
     <GeneralContext.Provider
       value={{
-        themeName,
         toggleTheme,
         toggleMobileNav,
         onPrevRedirect,
@@ -168,6 +240,10 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
         onCloseVideoModal,
         onSelectProject,
         unSelectProject,
+        onSendEmail,
+        onCancelSendEmail,
+        onSendWhatsAppMessage,
+        themeName,
         projectSelected,
         projects,
         openVideoModal,
@@ -175,6 +251,7 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
         prevPath,
         nextPath,
         pathName,
+        sendEmailState,
       }}
     >
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
