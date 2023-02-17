@@ -16,10 +16,12 @@ interface GeneralContextType {
   onOpenVideoModal: () => void;
   onCloseVideoModal: () => void;
   onSelectProject: (project: IProjectData) => void;
-  onSendEmail: (data: ISendEmailData) => void;
+  onSendEmail: () => void;
   unSelectProject: () => void;
   onCancelSendEmail: () => void;
-  onSendWhatsAppMessage: (data:ISendEmailData) => void;
+  onSendWhatsAppMessage: () => void;
+  handleChangeFormState: ({ name, value }: IInputProps) => void;
+  formState: ISendEmailData;
   projectSelected: IProjectData | null;
   projects: IProjectData[];
   openVideoModal: boolean;
@@ -56,6 +58,11 @@ interface ISendEmailData {
   phone: string;
 }
 
+interface IInputProps {
+  name: string;
+  value: string;
+}
+
 type ThemeType = typeof light | typeof dark;
 
 //mapping de rotas
@@ -86,10 +93,16 @@ export const PathRedirectMap: RedirectMap = {
   },
 };
 
-const initialSendEmailState:ISendEmailProps = {
+const initialSendEmailState: ISendEmailProps = {
   status: null,
   message: "",
-}
+};
+const initialFormState: ISendEmailData = {
+  name: "",
+  email: "",
+  message: "",
+  phone: "",
+};
 
 //create context
 export const GeneralContext = createContext<GeneralContextType>({
@@ -112,9 +125,10 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
   );
 
   const [projects, setProjects] = useState<IProjectData[]>([]);
-  const [sendEmailState, setSendEmailState] = useState<ISendEmailProps>(initialSendEmailState);
-
-
+  const [sendEmailState, setSendEmailState] = useState<ISendEmailProps>(
+    initialSendEmailState
+  );
+  const [formState, setFormState] = useState<ISendEmailData>(initialFormState);
 
   const onSelectProject = (project: IProjectData) => {
     project ? setProjectSelected(project) : null;
@@ -168,53 +182,52 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
     setOpenVideoModal(false);
   };
 
-  
+  const handleChangeFormState = ({ name, value }: IInputProps) => {
+    setFormState({ ...formState, [name]: value });
+  };
 
-
-  const onSendEmail = async (data: ISendEmailData) => {
-    setSendEmailState({message:"Enviando e-mail", status: "loading"})
-
+  const onSendEmail = async () => {
+    setSendEmailState({ message: "Enviando e-mail", status: "loading" });
 
     try {
-      await sendMailService(data)
-      setSendEmailState({status: "success", message: "E-mail enviado com sucesso!"})
-    } catch  {
-      setSendEmailState({status: "error", message: "Erro ao enviar e-mail! Deseja enviar via Whatsapp?"})
+      await sendMailService(formState);
+      setSendEmailState({
+        status: "success",
+        message: "E-mail enviado com sucesso!",
+      });
+    } catch {
+      setSendEmailState({
+        status: "error",
+        message: "Erro ao enviar e-mail! Deseja enviar via Whatsapp?",
+      });
     }
-  }
+  };
 
   const onCancelSendEmail = () => {
-    setSendEmailState(initialSendEmailState)
-  }
+    setSendEmailState(initialSendEmailState);
+  };
 
-  const onSendWhatsAppMessage = async (data:ISendEmailData) => {
-    
-
-  
-      setSendEmailState({message:"Abrindo o Whatsapp Web...", status: "redirect"})
-    
+  const onSendWhatsAppMessage = async () => {
+    setSendEmailState({
+      message: "Abrindo o Whatsapp Web...",
+      status: "redirect",
+    });
 
     setTimeout(() => {
       const url = `https://api.whatsapp.com/send?phone=5561992943297&text=`;
-    const message = 
-    `*MENSAGEM ENVIADA PELO SITE*%0A%0A
-    *Nome:* ${data.name}%0A
-    *E-mail:* ${data.email}%0A
-    *Telefone:* ${data.phone}%0A
+      const message = `*MENSAGEM ENVIADA PELO SITE*%0A%0A
+    *Nome:* ${formState.name}%0A
+    *E-mail:* ${formState.email}%0A
+    *Telefone:* ${formState.phone}%0A
     *Mensagem:*%0A%0A 
-    ${data.message}`;
-    window.open(`${url}${message}`, "_blank");
+    ${formState.message}`;
+      window.open(`${url}${message}`, "_blank");
     }, 2000);
-    
-
-    
 
     setTimeout(() => {
-      setSendEmailState(initialSendEmailState)
-    }, 2000)
+      setSendEmailState(initialSendEmailState);
+    }, 2000);
   };
-
-  
 
   useEffect(() => {
     setCookie(null, "theme", themeName, {
@@ -243,6 +256,8 @@ export const GeneralContextProvider = ({ children }: GeneralProviderProps) => {
         onSendEmail,
         onCancelSendEmail,
         onSendWhatsAppMessage,
+        handleChangeFormState,
+        formState,
         themeName,
         projectSelected,
         projects,
@@ -268,3 +283,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     },
   };
 };
+

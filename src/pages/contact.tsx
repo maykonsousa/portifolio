@@ -12,7 +12,7 @@ import {
   WhatsappButton,
 } from "@/styles/pages/Contact.styles";
 import Link from "next/link";
-import { FormEvent, useContext, useState } from "react";
+import { FormEvent, useContext } from "react";
 import {
   FaEnvelope,
   FaGithub,
@@ -24,31 +24,20 @@ import {
 
 import { MdGroupAdd, MdOutlineAlternateEmail } from "react-icons/md";
 
-const initialValues = {
-  name: "",
-  email: "",
-  phone: "",
-  message: "",
-};
-
-interface IInputProps {
-  name: string;
-  value: string;
-}
 const Contact = () => {
-  const [values, setValues] = useState(initialValues);
-  const {onSendWhatsAppMessage, onSendEmail} = useContext(GeneralContext)
+  const {
+    onSendWhatsAppMessage,
+    onSendEmail,
+    formState,
+    handleChangeFormState,
+  } = useContext(GeneralContext);
 
-  const handleChange = ({ name, value }: IInputProps) => {
-    setValues({ ...values, [name]: value });
-  };
-
- 
+  const { name, email, message, phone } = formState;
 
   return (
     <Main>
       <ContactPageContainer>
-        <SendMailModal formData={values} />
+        <SendMailModal />
         <h1>Contatos</h1>
         <ContactContent>
           <InformationsContainer>
@@ -60,7 +49,7 @@ const Contact = () => {
                 </div>
                 <ul>
                   <li>
-                    <Link href={"/"} target="_blank">
+                    <Link href={process.env.MY_LINKEDIN} target="_blank">
                       <FaLinkedinIn />
                     </Link>
                   </li>
@@ -115,51 +104,55 @@ const Contact = () => {
               </div>
             </InformationsCard>
           </InformationsContainer>
-          <FormContainer >
-            <form onSubmit={
-              (e:FormEvent)=>{
-                e.preventDefault()
-                onSendEmail(values)
-              }
-            }>
-             <Input
-             label="Nome"
-             name="name"
-             type="text"
-             placeholder="Digite o seu nome"
-             value={values.name}
-             setValue={handleChange}
-           />
-           <Input
-             label="E-mail"
-             name="email"
-             type="text"
-             placeholder="Digite o seu e-mail"
-             value={values.email}
-             setValue={handleChange}
-           />
+          <FormContainer>
+            <form
+              onSubmit={(e: FormEvent) => {
+                e.preventDefault();
+                onSendEmail();
+              }}
+            >
+              <Input
+                label="Nome"
+                name="name"
+                type="text"
+                placeholder="Digite o seu nome"
+                value={name}
+                setValue={handleChangeFormState}
+              />
+              <Input
+                label="E-mail"
+                name="email"
+                type="text"
+                placeholder="Digite o seu e-mail"
+                value={email}
+                setValue={handleChangeFormState}
+              />
 
-           <Input
-             label="Telefone"
-             name="phone"
-             type="tel"
-             placeholder="Digite o seu telefone"
-             value={values.phone}
-             setValue={handleChange}
-           />
+              <Input
+                label="Telefone"
+                name="phone"
+                type="tel"
+                placeholder="Digite o seu telefone"
+                value={phone}
+                setValue={handleChangeFormState}
+              />
 
-          <TextArea 
-           label={"Mensagem"}
-           name={"message"}
-           value={values.message}
-           changeValue={handleChange}
-          />
-         <FormButtonsContainer>
-           <EmailButton type="submit"><FaEnvelope/> Enviar</EmailButton>
-           <WhatsappButton type="button" onClick={()=>onSendWhatsAppMessage(values)}><FaWhatsapp/>Enviar</WhatsappButton>
-         </FormButtonsContainer>
+              <TextArea
+                label={"Mensagem"}
+                name={"message"}
+                value={message}
+                changeValue={handleChangeFormState}
+              />
+              <FormButtonsContainer>
+                <EmailButton type="submit">
+                  <FaEnvelope /> Enviar
+                </EmailButton>
+                <WhatsappButton type="button" onClick={onSendWhatsAppMessage}>
+                  <FaWhatsapp />
+                  Enviar
+                </WhatsappButton>
+              </FormButtonsContainer>
             </form>
-           
           </FormContainer>
         </ContactContent>
       </ContactPageContainer>
