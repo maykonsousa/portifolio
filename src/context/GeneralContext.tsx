@@ -51,7 +51,7 @@ interface RedirectMap {
   [key: string]: RedirectMapProps;
 }
 
-interface ISendEmailData {
+export interface ISendEmailData {
   name: string;
   email: string;
   message: string;
