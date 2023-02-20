@@ -4,7 +4,7 @@ export const CardContainer = styled.div`
   display: flex;
   width: 100%;
   position: relative;
-  height: 40rem;
+  height: 32rem;
 
   aside {
     width: 3rem;

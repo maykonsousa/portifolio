@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,7 +26,7 @@ export const ChildrenContainer = styled.div`
   height: 100%;
   width: 100%;
   max-width: 1200px;
-  min-height: 85vh;
+  min-height: 80vh;
   margin: 0 auto;
   justify-content: space-between;
 
