@@ -49,25 +49,25 @@ const Contact = () => {
                 </div>
                 <ul>
                   <li>
-                    <Link href={process.env.MY_LINKEDIN} target="_blank">
+                    <Link href={`${process.env.MY_LINKEDIN}`} target="_blank">
                       <FaLinkedinIn />
                     </Link>
                   </li>
                   <li>
                     {" "}
-                    <Link href={"/"} target="_blank">
+                    <Link href={`${process.env.MY_INSTAGRAM}`} target="_blank">
                       <FaInstagram />
                     </Link>
                   </li>
                   <li>
                     {" "}
-                    <Link href={"/"} target="_blank">
+                    <Link href={`${process.env.MY_GITHUB}`} target="_blank">
                       <FaGithub />
                     </Link>
                   </li>
                   <li>
                     {" "}
-                    <Link href={"/"}>
+                    <Link href={`${process.env.MY_TWITTER}`}>
                       <FaTwitter />
                     </Link>
                   </li>

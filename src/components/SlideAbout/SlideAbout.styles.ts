@@ -21,7 +21,7 @@ export const SlideAboutContainer = styled.div`
     display: block;
     width: 100%;
     border-radius: 8px;
-    box-shadow: rgba(168, 85, 247, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   }
 
   .swiper-button-next,
@@ -50,3 +50,4 @@ export const SlideAboutContainer = styled.div`
     margin-top: 5rem;
   }
 `;
+

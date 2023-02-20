@@ -19,6 +19,7 @@ declare module "styled-components" {
       "zinc-900": string;
       "purple-500": string;
       "purple-600": string;
+      "purple-800": string;
       "green-500": string;
       "green-600": string;
       "red-500": string;

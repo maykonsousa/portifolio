@@ -47,6 +47,8 @@ export const InformationsCard = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  min-height: 200px;
+  height: auto;
   flex: 1;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 1rem;
@@ -119,6 +121,7 @@ export const InformationsCard = styled.div`
           &:hover {
             background-color: ${({ theme }) => theme.colors["purple-500"]};
             color: ${({ theme }) => theme.colors["text"]};
+            transform: translateY(-16px);
           }
         }
       }

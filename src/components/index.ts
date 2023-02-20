@@ -16,4 +16,6 @@ export { ConditionalRender } from "./ConditionalRender/ConditionalRender";
 export { Input } from "./Input/Input";
 export { TextArea } from "./TextArea/TextArea";
 export { SendMailModal } from "./SendMailModal/SendMailModal";
+export { DesktopCardEducation } from "./DesktopCardEducation/DesktopCardEducation";
+export type { IEducationData } from "./DesktopCardEducation/DesktopCardEducation";
 
