@@ -12,7 +12,7 @@ export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 1rem 0;
     cursor: pointer;
     transition: all 0.2s ease-in-out;

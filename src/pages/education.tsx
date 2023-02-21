@@ -71,7 +71,7 @@ export const EducationData: IEducationData[] = [
     id: 4,
     year: "2020",
     duration: "115 horas",
-    title: "Desenvolvimento Web Completo",
+    title: "Desenvolvimento Web",
     description:
       "Curso completo de desenvolvimento web incluindo HTML5, CSS3, JavaScript, jQuery, Bootstrap, PHP, MySQL, Laravel, WordPress, ReactJS, VueJS, NodeJS, Angular, Ionic, SEO, entre outros.",
     image: UdemyImg.src,

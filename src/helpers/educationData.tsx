@@ -7,12 +7,12 @@ export const EducationData: IEducationData[] = [
   {
     id: 1,
     year: "2022",
-    duration: "60 horas",
+    duration: "100 horas",
     title: "Ignite - ReactJS",
     description:
       "Curso completo de ReactJS Abordando as versõers mais atualizadas inclundo ferramentas como NextJS, Typescript, Context API, Hooks, Styled Components, entre outras. Curso focado 100% na prática.",
     image: IgniteReactImg,
-    link: "https://www.rocketseat.com.br/",
+    link: "https://rocketseat.com.br/ignite",
     school: "Rocketseat",
     teacher: {
       name: "Diego Fernandes",

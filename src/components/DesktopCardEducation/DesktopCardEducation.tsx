@@ -15,16 +15,16 @@ interface ITeacher {
 export interface IEducationData {
   id: number;
   year: string;
-  duration?: string;
+  duration: string;
   title: string;
   description?: string;
-  image?: string;
-  link?: string;
-  school?: string;
-  teacher?: ITeacher;
+  image: string;
+  link: string;
+  school: string;
+  teacher: ITeacher;
 }
 
-interface IDesktopCardEducationProps
+export interface IDesktopCardEducationProps
   extends React.HTMLAttributes<HTMLDivElement> {
   data: IEducationData;
   isActive: boolean;
@@ -38,7 +38,6 @@ export const DesktopCardEducation = ({
   isLast,
   handleActive,
 }: IDesktopCardEducationProps) => {
-  console.log(data);
   const activeClass = isActive ? "active" : "";
   const lastClass = isLast ? "last" : "";
   return (

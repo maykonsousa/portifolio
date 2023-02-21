@@ -12,7 +12,6 @@ export { VideoModal } from "./VideoModal/VideoModal";
 export { ProjectsGroupDesktop } from "./ProjectsGroupDesktop/ProjectsGroupDesktop";
 export { ProjectsGroupMobile } from "./ProjectsGroupMobile/ProjectsGroupMobile";
 export { ProjectCardMobile } from "./ProjectCardMobile/ProjectCardMobile";
-export { ConditionalRender } from "./ConditionalRender/ConditionalRender";
 export { Input } from "./Input/Input";
 export { TextArea } from "./TextArea/TextArea";
 export { SendMailModal } from "./SendMailModal/SendMailModal";

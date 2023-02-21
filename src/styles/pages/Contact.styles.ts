@@ -47,7 +47,8 @@ export const InformationsCard = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 10rem;
   flex: 1;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 1rem;

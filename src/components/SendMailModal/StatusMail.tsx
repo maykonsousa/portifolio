@@ -88,7 +88,7 @@ const RedirectStatus = ({ message }: IStatusContentProps) => {
   );
 };
 
-export const StatusMail = ({ status, message, formData }: IStatusMailProps) => {
+export const StatusMail = ({ status, message }: IStatusMailProps) => {
   const { onSendWhatsAppMessage, onCancelSendEmail } =
     useContext(GeneralContext);
   switch (status) {

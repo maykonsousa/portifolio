@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { IProjectData, projectsData } from "@/helpers/projectsData";
 import { sendMailService } from "@/services/sendMailService";
 
-interface GeneralContextType {
+export interface GeneralContextType {
   themeName: "light" | "dark";
   toggleTheme: (name?: "dark" | "light") => void;
   toggleMobileNav: () => void;
