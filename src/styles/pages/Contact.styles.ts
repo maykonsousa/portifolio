@@ -15,7 +15,9 @@ export const ContactContent = styled.div`
   gap: 2rem;
   width: 100%;
   height: 100%;
+	max-height: 640px;
   flex: 1;
+
 
   @media (max-width: 849px) {
     display: flex;
@@ -30,11 +32,11 @@ export const InformationsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
+	padding: 2rem 1rem;
   flex: 1;
-  padding: 1rem 2rem;
   gap: 2rem;
 
   @media (max-width: 849px) {
@@ -139,6 +141,8 @@ export const FormContainer = styled.div`
   width: 100%;
   height: 100%;
   flex: 1;
+	padding: 1rem;
+	padding-bottom: 2rem;
 
   > form {
     display: flex;
@@ -146,7 +150,6 @@ export const FormContainer = styled.div`
     gap: 1rem;
     height: 100%;
     width: 100%;
-    padding: 1rem 2rem;
 
     @media (max-width: 849px) {
       padding: 0;

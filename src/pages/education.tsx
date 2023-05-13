@@ -99,7 +99,7 @@ const Education = () => {
         <EducationPageContainer>
           <h1>Educação</h1>
           <p>
-            Abaixo listo os cursos que tenhio feito não só para mostrar o que
+            Abaixo listo os cursos que tenho feito não só para mostrar o que
             tenho aprendido mas também para indicar os cursos para quem também
             está buscando se desenvolver
           </p>
