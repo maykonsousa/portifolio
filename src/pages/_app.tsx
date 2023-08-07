@@ -3,9 +3,11 @@ import { GeneralContextProvider } from "@/context/GeneralContext";
 import Global from "@/styles/global";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { StrapiProvider } from "../config/apollo";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
+    <StrapiProvider>
     <GeneralContextProvider>
       <Head>
         <meta charSet="utf-8" />
@@ -36,6 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Global />
     </GeneralContextProvider>
+    </StrapiProvider>
   );
 }
 
