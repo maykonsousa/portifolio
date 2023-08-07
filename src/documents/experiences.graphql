@@ -1,0 +1,21 @@
+query getExperiences {
+   experiences {
+    data {
+      id,
+      attributes {
+        title,
+        company,
+        description,
+        start_date
+        end_date,
+        teches {
+          data {
+            attributes {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

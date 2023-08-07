@@ -16,5 +16,7 @@ export { Input } from "./Input/Input";
 export { TextArea } from "./TextArea/TextArea";
 export { SendMailModal } from "./SendMailModal/SendMailModal";
 export { DesktopCardEducation } from "./DesktopCardEducation/DesktopCardEducation";
+export {ExperiencesPage} from './ExperiencesPage/ExperiencesPage'
+export {AboutPage} from './AboutPage/AboutPage'
 export type { IEducationData } from "./DesktopCardEducation/DesktopCardEducation";
 

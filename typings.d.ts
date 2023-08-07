@@ -9,5 +9,6 @@ declare namespace NodeJS {
 		MY_TWITTER: string;
 		MY_FACEBOOK: string;
 		MY_INSTAGRAM: string;
+		NEXT_PUBLIC_STRAPI_API_URL: string;
 	}
 }
