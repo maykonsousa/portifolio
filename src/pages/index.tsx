@@ -37,7 +37,7 @@ export default function Home() {
               </li>
 
               <li>
-                <Link href={"http://wa.me/55619992943297"}>
+                <Link href={"http://wa.me/5561992943297"}>
                   <IoLocation />
                   João Pessoa, Paraíba - Brazil
                 </Link>
