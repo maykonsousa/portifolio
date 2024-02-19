@@ -30,7 +30,7 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <Link href={"http://wa.me/55619992943297"}>
+                <Link href={"http://wa.me/5561992943297"}>
                   <FaWhatsapp />
                   +55 61 9 9294-3297
                 </Link>
